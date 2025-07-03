@@ -1,6 +1,14 @@
 {
 	"name": "ls_http_nyc_src_data",
 	"properties": {
+		"parameters": {
+			"year": {
+				"type": "string"
+			},
+			"month": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
