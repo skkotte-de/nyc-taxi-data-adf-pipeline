@@ -1,0 +1,29 @@
+{
+	"name": "ds_adls_parquet_nyc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_nyctaxi_072025",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"year": {
+				"type": "string"
+			},
+			"month": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "@{dataset().year}/@{dataset().month}/yellow_tripdata_@{dataset().year}-@{dataset().month}.parquet",
+				"folderPath": "yellow",
+				"container": "raw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
