@@ -1,0 +1,9 @@
+{
+	"name": "adf-nyc-taxi-pipelines",
+	"location": "southcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "dc525f86-9ab4-4ace-90cf-ae4701ebace3",
+		"tenantId": "15720ed2-1e72-4911-88a8-f2172782fb85"
+	}
+}
