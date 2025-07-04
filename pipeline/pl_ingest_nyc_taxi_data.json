@@ -82,7 +82,11 @@
 							"outputs": [
 								{
 									"referenceName": "ds_adls_parquet_nyc",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"year": "@item().year",
+										"month": "@item().month"
+									}
 								}
 							]
 						}
