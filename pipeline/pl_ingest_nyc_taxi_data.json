@@ -23,7 +23,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('yearMonthList')",
+						"value": "@json(variables('yearMonthList'))\n",
 						"type": "Expression"
 					},
 					"activities": [
