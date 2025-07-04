@@ -7,10 +7,12 @@
 		},
 		"parameters": {
 			"year": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@item().year"
 			},
 			"month": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@item().month"
 			}
 		},
 		"annotations": [],
@@ -18,7 +20,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@{dataset().year}/@{dataset().month}/yellow_tripdata_@{dataset().year}-@{dataset().month}.parquet",
+				"fileName": {
+					"value": "@{dataset().year}/@{dataset().month}/yellow_tripdata_@{dataset().year}-@{dataset().month}.parquet",
+					"type": "Expression"
+				},
 				"folderPath": "yellow",
 				"container": "raw"
 			},
