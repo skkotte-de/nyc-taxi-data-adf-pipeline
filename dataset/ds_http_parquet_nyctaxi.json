@@ -3,7 +3,11 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_http_nyc_src_data",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"year": "@item().year",
+				"month": "@item().month"
+			}
 		},
 		"annotations": [],
 		"type": "Parquet",
