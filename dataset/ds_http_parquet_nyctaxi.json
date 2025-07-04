@@ -9,6 +9,16 @@
 				"month": "@item().month"
 			}
 		},
+		"parameters": {
+			"year": {
+				"type": "string",
+				"defaultValue": "@item().year"
+			},
+			"month": {
+				"type": "string",
+				"defaultValue": "@item().month"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
