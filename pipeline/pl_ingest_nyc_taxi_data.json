@@ -72,7 +72,11 @@
 							"inputs": [
 								{
 									"referenceName": "ds_http_parquet_nyctaxi",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"year": "@item().year",
+										"month": "@item().month"
+									}
 								}
 							],
 							"outputs": [
