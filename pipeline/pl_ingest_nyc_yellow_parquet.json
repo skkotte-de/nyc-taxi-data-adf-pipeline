@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEachYearMonth",
+				"name": "ForEach_YearMonth",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -15,11 +15,12 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "CopyYellowCabData",
+							"name": "Copy_Parquet_HTTP_to_ADLS",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
-								"retry": 0,
+								"timeout": "0.12:00:00",
+								"retry": 1,
 								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
 								"secureInput": false
@@ -45,7 +46,15 @@
 										"type": "ParquetWriteSettings"
 									}
 								},
-								"enableStaging": false
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
