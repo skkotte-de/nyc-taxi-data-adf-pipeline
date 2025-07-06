@@ -12,6 +12,7 @@
 						"value": "@variables('yearMonthList')",
 						"type": "Expression"
 					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Copy data1",
