@@ -5,6 +5,16 @@
 			"referenceName": "ls_adls2_nyctaxi",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"year": {
+				"type": "string",
+				"defaultValue": "@item().year"
+			},
+			"month": {
+				"type": "string",
+				"defaultValue": "@item().month"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
