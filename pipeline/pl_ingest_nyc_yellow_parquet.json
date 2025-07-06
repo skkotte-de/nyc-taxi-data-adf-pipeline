@@ -1,0 +1,46 @@
+{
+	"name": "pl_ingest_nyc_yellow_parquet",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('yearMonthList')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"enableStaging": false
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"yearMonthList": {
+				"type": "Array",
+				"defaultValue": [
+					"@json('[{\"year\":\"2025\",\"month\":\"04\"}]')"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
