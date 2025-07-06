@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "yearMonthList",
+				"name": "Set yearMonthList",
 				"type": "SetVariable",
 				"dependsOn": [],
 				"policy": {
@@ -14,7 +14,7 @@
 				"typeProperties": {
 					"variableName": "yearMonthList",
 					"value": {
-						"value": "@json('[{\"year\":\"2025\",\"month\":\"01\"},{\"year\":\"2025\",\"month\":\"02\"},{\"year\":\"2025\",\"month\":\"03\"},{\"year\":\"2025\",\"month\":\"04\"},{\"year\":\"2025\",\"month\":\"05\"}]')",
+						"value": "@json('[{\"year\":\"2025\",\"month\":\"01\"}, {\"year\":\"2025\",\"month\":\"02\"}, {\"year\":\"2025\",\"month\":\"03\"}, {\"year\":\"2025\",\"month\":\"04\"}, {\"year\":\"2025\",\"month\":\"05\"}]')",
 						"type": "Expression"
 					}
 				}
@@ -24,7 +24,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "yearMonthList",
+						"activity": "Set yearMonthList",
 						"dependencyConditions": [
 							"Succeeded"
 						]
