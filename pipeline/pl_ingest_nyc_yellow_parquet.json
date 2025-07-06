@@ -1,10 +1,10 @@
 {
 	"name": "pl_ingest_nyc_yellow_parquet",
 	"properties": {
-		"description": "NYC Yellow Taxi Data Ingest Pipeline",
+		"description": "Ingest NYC Yellow Taxi parquet files from HTTP to ADLS",
 		"activities": [
 			{
-				"name": "ForEach1",
+				"name": "ForEachMonth",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -16,11 +16,10 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "CopyYellowCab_ParquetToBlob",
+							"name": "CopyYellowParquet",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
-								"timeout": "0.12:00:00",
 								"retry": 0,
 								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
@@ -47,15 +46,7 @@
 										"type": "ParquetWriteSettings"
 									}
 								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
+								"enableStaging": false
 							},
 							"inputs": [
 								{
