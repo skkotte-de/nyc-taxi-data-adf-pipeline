@@ -24,7 +24,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "trip-data/yellow_tripdata_@{dataset().year}-@{dataset().month}.parquet"
+				"relativeUrl": "yellow_tripdata_@{dataset().year}-@{dataset().month}.parquet"
 			},
 			"compressionCodec": "snappy"
 		},
