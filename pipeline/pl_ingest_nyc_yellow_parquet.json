@@ -1,7 +1,6 @@
 {
 	"name": "pl_ingest_nyc_yellow_parquet",
 	"properties": {
-		"description": "Pipeline to ingest NYC Yellow Taxi data from CloudFront",
 		"activities": [
 			{
 				"name": "ForEach1",
@@ -16,7 +15,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Copy data1",
+							"name": "CopyYellowCab_ParquetToBlob",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -81,28 +80,10 @@
 		"parameters": {
 			"yearMonthList": {
 				"type": "Array",
-				"defaultValue": [
-					{
-						"year": "2025",
-						"month": "01"
-					},
-					{
-						"year": "2025",
-						"month": "02"
-					},
-					{
-						"year": "2025",
-						"month": "03"
-					},
-					{
-						"year": "2025",
-						"month": "04"
-					},
-					{
-						"year": "2025",
-						"month": "05"
-					}
-				]
+				"defaultValue": {
+					"value": "@json('[{\"year\":\"2025\",\"month\":\"01\"},{\"year\":\"2025\",\"month\":\"02\"},{\"year\":\"2025\",\"month\":\"03\"},{\"year\":\"2025\",\"month\":\"04\"},{\"year\":\"2025\",\"month\":\"05\"}]')",
+					"type": "Expression"
+				}
 			}
 		},
 		"annotations": []
