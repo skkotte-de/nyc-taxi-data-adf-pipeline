@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('yearMonthList')\n",
+						"value": "@variables('yearMonthList')",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -83,10 +83,9 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "yearMonthList",
-					"value": {
-						"value": "@json('[{\"year\":\"2025\",\"month\":\"01\"},{\"year\":\"2025\",\"month\":\"02\"}]')",
-						"type": "Expression"
-					}
+					"value": [
+						"@json('[{\"year\":\"2025\",\"month\":\"01\"},{\"year\":\"2025\",\"month\":\"02\"},{\"year\":\"2025\",\"month\":\"03\"},{\"year\":\"2025\",\"month\":\"04\"},{\"year\":\"2025\",\"month\":\"05\"}]')\n"
+					]
 				}
 			}
 		],
