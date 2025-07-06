@@ -91,10 +91,7 @@
 		],
 		"variables": {
 			"yearMonthList": {
-				"type": "Array",
-				"defaultValue": [
-					"@json('[{\"year\":\"2025\",\"month\":\"04\"}]')"
-				]
+				"type": "Array"
 			}
 		},
 		"annotations": []
