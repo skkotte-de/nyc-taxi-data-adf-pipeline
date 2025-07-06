@@ -89,7 +89,11 @@
 							"outputs": [
 								{
 									"referenceName": "ds_blob_parquet_nyc_taxi",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"year": "@item().year",
+										"month": "@item().month"
+									}
 								}
 							]
 						}
