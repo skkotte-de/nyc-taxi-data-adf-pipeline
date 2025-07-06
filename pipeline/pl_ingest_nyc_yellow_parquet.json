@@ -20,6 +20,7 @@
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
+								"timeout": "0.12:00:00",
 								"retry": 0,
 								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
@@ -79,21 +80,7 @@
 		],
 		"parameters": {
 			"yearMonthList": {
-				"type": "Array",
-				"defaultValue": [
-					{
-						"year": "2025",
-						"month": "01"
-					},
-					{
-						"year": "2025",
-						"month": "02"
-					},
-					{
-						"year": "2025",
-						"month": "03"
-					}
-				]
+				"type": "Array"
 			}
 		},
 		"annotations": []
