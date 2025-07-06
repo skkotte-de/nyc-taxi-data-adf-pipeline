@@ -83,9 +83,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "yearMonthList",
-					"value": [
-						"@json('[\n  {\"year\":\"2025\",\"month\":\"01\"},\n  {\"year\":\"2025\",\"month\":\"02\"},\n  {\"year\":\"2025\",\"month\":\"03\"},\n  {\"year\":\"2025\",\"month\":\"04\"},\n  {\"year\":\"2025\",\"month\":\"05\"}\n]')\n"
-					]
+					"value": {
+						"value": "@json('[{\"year\":\"2025\",\"month\":\"01\"},{\"year\":\"2025\",\"month\":\"02\"}]')",
+						"type": "Expression"
+					}
 				}
 			}
 		],
