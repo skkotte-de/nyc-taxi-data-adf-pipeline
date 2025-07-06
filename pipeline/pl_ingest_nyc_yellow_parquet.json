@@ -3,13 +3,37 @@
 	"properties": {
 		"activities": [
 			{
+				"name": "SetYearMonthList",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "yearMonthList",
+					"value": {
+						"value": "@json('[{\"year\":\"2025\",\"month\":\"01\"},{\"year\":\"2025\",\"month\":\"02\"},{\"year\":\"2025\",\"month\":\"03\"},{\"year\":\"2025\",\"month\":\"04\"},{\"year\":\"2025\",\"month\":\"05\"}]')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "SetYearMonthList",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.yearMonthList",
+						"value": "@variables('yearMonthList')",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -19,7 +43,6 @@
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
-								"timeout": "0.12:00:00",
 								"retry": 0,
 								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
@@ -77,13 +100,9 @@
 				}
 			}
 		],
-		"parameters": {
+		"variables": {
 			"yearMonthList": {
-				"type": "Array",
-				"defaultValue": {
-					"value": "@json('[{\"year\":\"2025\",\"month\":\"01\"},{\"year\":\"2025\",\"month\":\"02\"},{\"year\":\"2025\",\"month\":\"03\"},{\"year\":\"2025\",\"month\":\"04\"},{\"year\":\"2025\",\"month\":\"05\"}]')",
-					"type": "Expression"
-				}
+				"type": "Array"
 			}
 		},
 		"annotations": []
