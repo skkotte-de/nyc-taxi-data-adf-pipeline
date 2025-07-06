@@ -1,7 +1,7 @@
 {
 	"name": "pl_ingest_nyc_yellow_parquet",
 	"properties": {
-		"description": "Parquet ingest from NYC taxi CloudFront",
+		"description": "NYC Yellow Taxi Data Ingest Pipeline",
 		"activities": [
 			{
 				"name": "ForEach1",
@@ -92,14 +92,6 @@
 					{
 						"year": "2025",
 						"month": "03"
-					},
-					{
-						"year": "2025",
-						"month": "04"
-					},
-					{
-						"year": "2025",
-						"month": "05"
 					}
 				]
 			}
