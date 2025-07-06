@@ -1,39 +1,16 @@
 {
 	"name": "pl_ingest_nyc_yellow_parquet",
 	"properties": {
+		"description": "Pipeline to ingest NYC Yellow Taxi data from CloudFront",
 		"activities": [
-			{
-				"name": "Set yearMonthList",
-				"type": "SetVariable",
-				"dependsOn": [],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "yearMonthList",
-					"value": {
-						"value": "@json('[{\"year\":\"2025\",\"month\":\"01\"}, {\"year\":\"2025\",\"month\":\"02\"}, {\"year\":\"2025\",\"month\":\"03\"}, {\"year\":\"2025\",\"month\":\"04\"}, {\"year\":\"2025\",\"month\":\"05\"}]')",
-						"type": "Expression"
-					}
-				}
-			},
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Set yearMonthList",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('yearMonthList')",
+						"value": "@pipeline().parameters.yearMonthList",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -101,9 +78,31 @@
 				}
 			}
 		],
-		"variables": {
+		"parameters": {
 			"yearMonthList": {
-				"type": "Array"
+				"type": "Array",
+				"defaultValue": [
+					{
+						"year": "2025",
+						"month": "01"
+					},
+					{
+						"year": "2025",
+						"month": "02"
+					},
+					{
+						"year": "2025",
+						"month": "03"
+					},
+					{
+						"year": "2025",
+						"month": "04"
+					},
+					{
+						"year": "2025",
+						"month": "05"
+					}
+				]
 			}
 		},
 		"annotations": []
