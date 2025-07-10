@@ -10,7 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "yellow_tripdata_@{dataset().year}-@{dataset().month}.parquet"
+				"relativeUrl": {
+					"value": "yellow_tripdata_@{dataset().year}-@{dataset().month}.parquet",
+					"type": "Expression"
+				}
 			},
 			"compressionCodec": "snappy"
 		},
